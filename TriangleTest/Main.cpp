@@ -1,9 +1,17 @@
 #include "cRenderUtils.h"
-
+#include "window.h"
 //Yoloswaggins
 
 int main() {
-	test();
+	
+	Window window;
+	window.init();
+
+	while (window.step()) {
+
+	}
+
+	window.term();
 
 	return 0;
 }

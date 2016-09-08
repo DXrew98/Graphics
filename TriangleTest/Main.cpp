@@ -5,11 +5,11 @@
 int main() {
 	
 	Window window;
-	window.init();
+	window.init(800, 600, "Test");
 
-	while (window.step()) {
 
-	}
+
+	while (window.step()) {};
 
 	window.term();
 

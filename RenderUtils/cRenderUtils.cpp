@@ -2,12 +2,5 @@
 
 #include "GLEW\glew.h"
 #include "GLFW\glfw3.h"
-
+#include <cstdio>
 #include "cRenderUtils.h"
-
-void test() {
-
-	glfwInit();
-	glfwTerminate();
-
-}

@@ -19,7 +19,7 @@ bool Window::init(int a_width, int a_height, char * a_title){
 
 	glewExperimental = true;
 	glewInit();
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 
 	return false;
 }
@@ -28,10 +28,11 @@ bool Window::step(){
 
 	if (!isInitialized) return false;
 
-	glClear(GL_COLOR_BUFFER_BIT);
 
 	glfwPollEvents();
 	glfwSwapBuffers(winHandle);
+	glClear(GL_COLOR_BUFFER_BIT);
+	
 	return !glfwWindowShouldClose(winHandle);
 }
 

@@ -10,7 +10,7 @@ private:
 	bool isInitialized = false;
 
 	//foward declare
-	class GLFWwindow *winHandle;
+	struct GLFWwindow *winHandle = nullptr;
 
 public:
 	bool init(int a_width = 800, int a_height = 600, char *a_title = "Game Window");

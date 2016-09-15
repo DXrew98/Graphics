@@ -2,6 +2,7 @@
 
 #include "GLEW\glew.h"
 #include "GLFW\glfw3.h"
+#include "Vertex.h"
 #include <cstdio>
 #include "cRenderUtils.h"
 
@@ -9,7 +10,7 @@ Geometry makeGeometry(const Vertex * verts, size_t vsize, const unsigned * tris,
 {
 	Geometry retval;
 
-	retval.size = tsize;
+	
 	//defining our variables
 	glGenBuffers(1, &retval.vbo);
 	glGenBuffers(1, &retval.ibo);
@@ -25,16 +26,20 @@ Geometry makeGeometry(const Vertex * verts, size_t vsize, const unsigned * tris,
 	//load in our triangles
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, tsize * sizeof(unsigned), tris, GL_STATIC_DRAW);
 
-	//Activate a vertex attribute (such as position)
+	// Attributes let us tell openGL how the memory is laid out
 	glEnableVertexAttribArray(0);
-	//describe the properties of the attribute (position)
-	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+	glEnableVertexAttribArray(1);
+
+	// index of the attribute, number of elements, type, normalized?, size of vertex, offset
+	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)Vertex::POSITION);
+	glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)Vertex::COLOR);
 
 	// unscope our variables (ORDER MATTERS)
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
+	retval.size = tsize;
 	return retval;
 }
 
@@ -48,7 +53,7 @@ void freeGeometry(Geometry & geo)
 	geo = { 0, 0, 0, 0 };
 }
 
-Shader makeShader(const char * vert, const char * frag)
+Shader makeShader(const char * vsource, const char * fscource)
 {
 	Shader retval;
 
@@ -58,8 +63,8 @@ Shader makeShader(const char * vert, const char * frag)
 	unsigned fs = glCreateShader(GL_FRAGMENT_SHADER);
 
 	//assign the source 
-	glShaderSource(vs, 1, &vert, NULL);
-	glShaderSource(fs, 1, &frag, NULL);
+	glShaderSource(vs, 1, &vsource, NULL);
+	glShaderSource(fs, 1, &fscource, NULL);
 
 	//compile
 	glCompileShader(vs);
@@ -83,7 +88,7 @@ void freeShader(Shader & shader)
 	glDeleteProgram(shader.handle);
 
 	//prevent reuse
-	shader = { 0 }; 
+	shader.handle = { 0 }; 
 }
 
 void draw(const Shader & shader, const Geometry & geo)

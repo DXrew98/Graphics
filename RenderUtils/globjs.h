@@ -1,5 +1,4 @@
 #pragma once
-#include "Vertex.h"
 
 struct Geometry {
 	unsigned vbo, ibo, vao, size;

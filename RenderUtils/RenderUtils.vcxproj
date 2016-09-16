@@ -129,10 +129,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="cRenderUtils.cpp" />
+    <ClCompile Include="glmake.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cRenderUtils.h" />
+    <ClInclude Include="gldecs.h" />
+    <ClInclude Include="glload.h" />
+    <ClInclude Include="glmake.h" />
+    <ClInclude Include="globjs.h" />
     <ClInclude Include="Vertex.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>

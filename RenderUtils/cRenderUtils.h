@@ -1,7 +1,4 @@
 
-//struct Vertex {
-//	float position[4] = { 0, 0, 0, 1 };
-//};
 
 struct Geometry {
 	

@@ -1,15 +1,11 @@
-#define GLEW_STATIC
-
-#include "globjects.h"
 #include "gldecs.h"
-#include "Vertex.h"
-#include "cRenderUtils.h"
+#include "glmake.h"
 
 Geometry makeGeometry(const Vertex * verts, size_t vsize, const unsigned * tris, size_t tsize)
 {
 	Geometry retval;
 
-	
+
 	//defining our variables
 	glGenBuffers(1, &retval.vbo);
 	glGenBuffers(1, &retval.ibo);
@@ -54,6 +50,8 @@ void freeGeometry(Geometry & geo)
 
 Shader makeShader(const char * vsource, const char * fscource)
 {
+	glog("TODO", "Find a way to implement state management");
+
 	Shader retval;
 
 	//define
@@ -72,7 +70,8 @@ Shader makeShader(const char * vsource, const char * fscource)
 	//link
 	glAttachShader(retval.handle, fs);
 	glAttachShader(retval.handle, vs);
-	glog_glLinkProgram(retval.handle);
+	glLinkProgram(retval.handle);
+	/*glog_glLinkProgram(retval.handle);*/ // error handeling version
 
 	//once the program is linked
 	//individual shaders aren't needed
@@ -87,13 +86,5 @@ void freeShader(Shader & shader)
 	glDeleteProgram(shader.handle);
 
 	//prevent reuse
-	shader.handle = { 0 }; 
-}
-
-void draw(const Shader & shader, const Geometry & geo)
-{
-	glUseProgram(shader.handle);
-	glBindVertexArray(geo.vao);
-
-	glDrawElements(GL_TRIANGLES, geo.size, GL_UNSIGNED_INT, 0);
+	shader.handle = { 0 };
 }

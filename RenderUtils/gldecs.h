@@ -10,12 +10,12 @@
 #define glog(detail, extra)\
 do {\
 	std::cout << "In " << __FILE__ << " at " << __FUNCTION__ << " on line " << __LINE__ << ": " << detail << ", " << extra << std::endl;\
-} while (0);
+} while (0)
 
 #define glog_glLinkProgram(shader)\
 do {\
 	glLinkProgram(shader);\
-	GLint Success = GL_FALSE;\
+	GLint success = GL_FALSE;\
 	glGetProgramiv(shader, GL_COMPILE_STATUS, &success);\
 	if (success == GL_FALSE){\
 		int length = 0;\

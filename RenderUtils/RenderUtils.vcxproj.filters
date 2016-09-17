@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\GLSTUFF">
-      <UniqueIdentifier>{a1021b2d-b152-4176-9676-f4afa7c7f819}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cRenderUtils.cpp">
@@ -27,28 +24,37 @@
     <ClCompile Include="glmake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gldraw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="glload.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cRenderUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="gldecs.h">
-      <Filter>Header Files\GLSTUFF</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="glload.h">
-      <Filter>Header Files\GLSTUFF</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="glmake.h">
-      <Filter>Header Files\GLSTUFF</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="globjs.h">
-      <Filter>Header Files\GLSTUFF</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vertex.h">
-      <Filter>Header Files\GLSTUFF</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="window.h">
-      <Filter>Header Files\GLSTUFF</Filter>
+    <ClInclude Include="gldraw.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

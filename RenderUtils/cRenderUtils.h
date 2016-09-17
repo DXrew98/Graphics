@@ -4,7 +4,8 @@
 
 #include "globjs.h"
 #include "glmake.h"
-#include "glmake.h"
+#include "glload.h"
+#include "gldraw.h"
 
 
 //struct Geometry {

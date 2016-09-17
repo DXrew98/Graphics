@@ -1,14 +1,20 @@
 #pragma once
 
 struct Geometry {
-	unsigned vbo, ibo, vao, size;
+
+	unsigned vbo, // vertex buffer is the array of vertices (handle)
+			 ibo, // index buffer is the array of triangles (handle)
+			 vao, // Handle for everything and the memory layout
+			 size;
 };
 
 struct Shader {
+
 	unsigned handle;
 };
 
 struct Texture {
+
 	unsigned handle;
 	unsigned width, height, format;
 };

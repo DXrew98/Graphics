@@ -6,6 +6,12 @@ void clearFramebuffer(const Framebuffer & r){
 
 	glBindFramebuffer(GL_FRAMEBUFFER, r.handle);
 	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+	glBindFramebuffer(GL_FRAMEBUFFER, 0);
+}
+
+void useShaderFlags(const Shader &s) {
+
+	
 }
 
 void tdraw_internal::tdraw_begin(const Shader & s, const Geometry & g, const Framebuffer & r){
@@ -31,6 +37,12 @@ void tdraw_internal::tdraw_close(const Shader & s, const Geometry & g, const Fra
 size_t tdraw_internal::tdraw_format(size_t idx, size_t tex, const glm::mat4 & val){
 
 	glUniformMatrix4fv(idx, 1, GL_FALSE, glm::value_ptr(val));
+	return 0;
+}
+
+size_t tdraw_internal::tdraw_format(size_t idx, size_t tex, const glm::vec4 & val){
+
+	glUniform4fv(idx, 1, glm::value_ptr(val));
 	return 0;
 }
 

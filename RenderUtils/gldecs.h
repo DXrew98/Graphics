@@ -16,13 +16,12 @@ do {\
 do {\
 	glLinkProgram(shader);\
 	GLint success = GL_FALSE;\
-	glGetProgramiv(shader, GL_COMPILE_STATUS, &success);\
+	glGetProgramiv(shader, GL_LINK_STATUS, &success);\
 	if (success == GL_FALSE){\
 		int length = 0;\
 		glGetProgramiv(shader, GL_INFO_LOG_LENGTH, &length);\
 		char *log = (char*)malloc(length);\
 		glGetProgramInfoLog(shader, length, 0, log);\
-		glog("Shader failed to compile\n", log);\
 		std::cout << log << std::endl;\
 		free(log);\
 	}\
@@ -30,6 +29,5 @@ do {\
 
 #else 
 #define glog(detail, extra)
-#define glog_glCompileShader(shader) glog_glCompileShader(shader)
 #define glog_gloLinkProgram(shader) gloLinkProgram(shader)
 #endif

@@ -47,8 +47,8 @@ Geometry makeGeometry(const Vertex * verts, size_t vsize, const unsigned * tris,
 
 void freeGeometry(Geometry & geo){
 
-	glDeleteBuffers(1, &geo.ibo);
 	glDeleteBuffers(1, &geo.vbo);
+	glDeleteBuffers(1, &geo.ibo);
 	glDeleteVertexArrays(1, &geo.vao);
 
 	// prevent accidental use
@@ -75,8 +75,8 @@ Shader makeShader(const char * vsource, const char * fscource){
 	glCompileShader(fs);
 
 	//link
-	glAttachShader(retval.handle, fs);
 	glAttachShader(retval.handle, vs);
+	glAttachShader(retval.handle, fs);
 	glLinkProgram(retval.handle);
 	/*glog_glLinkProgram(retval.handle);*/ // error handeling version
 

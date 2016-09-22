@@ -52,7 +52,7 @@ size_t tdraw_internal::tdraw_format(size_t idx, size_t tex, float val){
 	return 0;
 }
 
-size_t tdraw_internal::tdraw_format(size_t idx, size_t tex, const Texture val){
+size_t tdraw_internal::tdraw_format(size_t idx, size_t tex, const Texture &val){
 
 	glActiveTexture(GL_TEXTURE0 + tex);
 	glBindTexture(GL_TEXTURE_2D, val.handle);

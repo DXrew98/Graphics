@@ -63,7 +63,7 @@ Texture loadTexture(const char * path)
 Geometry loadOBJ(const char * path){
 
 	glog("TODO", "Eliminate redundent vertices.");
-	Geometry retval= {0,0,0,0};
+	
 	//tinyobj::attrib_t attrib;
 	//std::vector<tinyobj::shape_t> shapes;
 	//std::vector<tinyobj::material_t> materials;
@@ -88,12 +88,15 @@ Geometry loadOBJ(const char * path){
 	//	if (ind.texcoord_index >= 0) {
 
 	//		const float *t = &attrib.texcoords[ind.texcoord_index * 2];
-	//		verts[i].texcoord = glm::vec2(t[9], t[1]);
+	//		verts[i].texcoord = glm::vec2(t[0], t[1]);
 	//	}
 	//	tris[i] = i;
 	//}
 
 	//retval = makeGeometry(verts, vsize, tris, vsize);
+
+	/*Geometry retval = makeGeometry{ verts, vsize, tris, t[1] };*/
+	Geometry retval = { 0,0,0,0 };
 
 	//delete[] verts;
 	//delete[] tris;

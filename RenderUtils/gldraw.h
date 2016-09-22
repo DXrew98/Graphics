@@ -12,22 +12,9 @@ namespace tdraw_internal {
 
 	size_t tdraw_format(size_t idx, size_t tex, const glm::mat4 & val);
 	size_t tdraw_format(size_t idx, size_t tex, const glm::vec3 & val);
-
-	//void tdraw_uniformf(size_t idx, size_t size, const float *val);
-
-	//template<typename T>
-	//void tdraw_format(size_t idx, char tcode, size_t size, T val) {
-
-	//	switch(tcode){
-
-	//	case 'f': tdraw_uniformf(idx, size(const float *) , val); break;
-	//	case 'i': tdraw_uniformf(idx, size(const int   *), val); break;
-	//	}
-	//}
-
-	size_t tdraw_format(size_t idx, size_t tex, int v);
-	size_t tdraw_format(size_t idx, size_t tex, float v);
-	size_t tdraw_format(size_t idx, size_t tex, const Texture t);
+	size_t tdraw_format(size_t idx, size_t tex, int val);
+	size_t tdraw_format(size_t idx, size_t tex, float val);
+	size_t tdraw_format(size_t idx, size_t tex, const Texture &val);
 
 	template<typename T, typename ...U>
 	void tdraw_unpack(size_t idx, size_t tex, T val, U &&...uniforms) {
@@ -51,7 +38,7 @@ void tdraw(const Shader &s, const Geometry &g, const Framebuffer &r, U ... unifo
 	tdraw_internal::tdraw_begin(s, g, r);
 
 	//uniform location, tecture slot location
-	tdraw_unpack(0, 0, uniforms....);
+	tdraw_internal::tdraw_unpack(0, 0, uniforms....);
 
 	tdraw_internal::tdraw_close(s, g, r);
 }

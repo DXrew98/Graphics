@@ -10,20 +10,40 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TriangleTest", "TriangleTes
 		{7062BF28-6F2E-4D98-B402-7C2C89349CC0} = {7062BF28-6F2E-4D98-B402-7C2C89349CC0}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shaders", "res\shaders\shaders.vcxproj", "{7266EE17-DE82-44AC-8CB5-206F89452DB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Debug|x64.ActiveCfg = Debug|x64
+		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Debug|x64.Build.0 = Debug|x64
 		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Debug|x86.ActiveCfg = Debug|Win32
 		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Debug|x86.Build.0 = Debug|Win32
+		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Release|x64.ActiveCfg = Release|x64
+		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Release|x64.Build.0 = Release|x64
 		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Release|x86.ActiveCfg = Release|Win32
 		{7062BF28-6F2E-4D98-B402-7C2C89349CC0}.Release|x86.Build.0 = Release|Win32
+		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Debug|x64.ActiveCfg = Debug|x64
+		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Debug|x64.Build.0 = Debug|x64
 		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Debug|x86.ActiveCfg = Debug|Win32
 		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Debug|x86.Build.0 = Debug|Win32
+		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Release|x64.ActiveCfg = Release|x64
+		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Release|x64.Build.0 = Release|x64
 		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Release|x86.ActiveCfg = Release|Win32
 		{0569476D-9D12-49F7-96E3-AF8908E6225E}.Release|x86.Build.0 = Release|Win32
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Debug|x64.ActiveCfg = Debug|x64
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Debug|x64.Build.0 = Debug|x64
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Debug|x86.ActiveCfg = Debug|Win32
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Debug|x86.Build.0 = Debug|Win32
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Release|x64.ActiveCfg = Release|x64
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Release|x64.Build.0 = Release|x64
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Release|x86.ActiveCfg = Release|Win32
+		{7266EE17-DE82-44AC-8CB5-206F89452DB0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

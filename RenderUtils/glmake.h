@@ -7,9 +7,9 @@ struct Shader makeShader(const char *vsource, const char *fsource, bool depth = 
 void freeShader(Shader &);
 
 // param for channels and bit-depth
-struct Texture makeTexture(unsigned width, unsigned height, unsigned channels, const unsigned char *pixels);
+struct Texture makeTexture(unsigned width, unsigned height, unsigned channels, const void *pixels, bool isFloat = false);
 struct Texture makeTextureF(unsigned square, const float *pixel);
 void freeTexture(Texture &t);
 
-struct Framebuffer makeFramebuffer(unsigned width, unsigned height, unsigned nColors);
+struct Framebuffer makeFramebuffer(unsigned width, unsigned height, unsigned nColors, const bool *isfloat = nullptr, const int * channels = nullptr);
 void freeFramebuffer(Framebuffer &fb);

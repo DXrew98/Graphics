@@ -26,7 +26,7 @@ void main() {
 	Shader gpass = loadShader("../res/shaders/gpass.vert", "../res/shaders/gpass.frag");
 
 	Shader spass = loadShader("../res/shaders/spass.vert", "../res/shaders/spass.frag", true, false, false);
-	Shader lpass = loadShader("../res/shaders/lpass.vert", "../res/shaders/lpass.frag", false, true);
+	Shader lpass = loadShader("../res/shaders/lspass.vert", "../res/shaders/lspass.frag", false, true);
 
 
 	Framebuffer screen = { 0, 1280, 720 };
